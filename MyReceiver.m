@@ -1,8 +1,8 @@
 function [OutPutBits,Feedback] =  MyReceiver(InputSamples)
     
-    Nt = 1;
+    Nt = 2;
     Nr = size(InputSamples,1);
-    ModulationType = '8-PSK'; %BPSK, 8-PSK, 16-PSK;
+    ModulationType = 'BPSK'; %BPSK, 8-PSK, 16-PSK;
     DecoderType ='Convolutional'; %'Convolutional',  NONE; 
     EstimationType = 'Constant';
     
@@ -28,7 +28,7 @@ function [OutPutBits,Feedback] =  MyReceiver(InputSamples)
     OFDMRemoved = EstimateOFDM(InputSamples,Nt);
     
     %% Demodulate
-    if strcmp(ModulationType,'QPSK')
+    if strcmp(ModulationType,'BPSK')
         M= 2;
         %x = EqualizedSymbols;
         x = OFDMRemoved;

@@ -2,9 +2,9 @@ function [OfdmSignals, Nr] =  MyTransmitter(b, Feedback)
     
     bits = b;
     EncoderType ='Convolutional';  % Convolutional,NONE;
-    ModulationType = '8-PSK'; %BPSK, 8-PSK, 16-PSK;
+    ModulationType = 'BPSK'; %BPSK, 8-PSK, 16-PSK;
    % Pulseshape = 'SRRC';
-    TypeOfTx = 'SingleAntenna'; %'SingleAntenna' ;%"Alamouti";  %OpenLoopSpatialMultiplexing
+    TypeOfTx = 'Alamouti'; %'SingleAntenna' ;%"Alamouti";  %OpenLoopSpatialMultiplexing
     Nt =2;
     Nr =2;
  
